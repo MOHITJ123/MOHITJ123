@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+  <button (click)='valueChanged() '>Click Here</button>
+  <table>
+    <thead>
+    <th>Id</th><th>Title</th><th>Price</th><th>Stock</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.stock}}</td>
+        <td *ngIf></td>
+
+        <td *ngIf="p.stock <=10">out of stock</td>
+        
+      </tr>
+    </tbody>
+  
+  </table>
+
+  {{ name | uppercase}}<br/>
+  {{ name | lowercase}}<br/>
+  {{ name | titlecase}}<br/>
+  {{ name | slice:3}}<br/>
+  {{ name | slice:3:5}}<br/>
+  {{person | json}}<br/>
+  {{person}}<br/>
+  {{ val | number: '1.2-3'}}<br/>
+  {{ val | number: '3.4-5'}}<br/>
+  {{ val | number: '3.1-2'}}<br/>
+  {{ val | percent}}<br/>
+  {{ val | currency}}<br/>
+  {{ val | currency: 'GBP'}}<br/>
+  {{ val | currency: 'INR'}}<br/>
+  {{ hdate}}<br/>
+  {{ hdate | date: 'shortDate'}}<br/>
+  {{ hdate | date: 'shortTime'}}<br/>
+  {{ hdate | date: 'mediumDate'}}<br/>
+  {{ hdate | date: 'mediumTime'}}<br/>
+  {{ hdate | date: 'longTime'}}<br/>
+  {{ hdate | date: 'longDate'}}<br/>
+
+  {{name | arrangeorder: 'Mr.' : 'the Great'}}
+
+  {{ characters | sort:'ascending'}}<br/>
+  {{ characters | sort:'descending'}}<br/>
+
+Enter the Search text : <input [(ngModel)]='searchText' placeholder='search Text goes here'>
+<ul>
+<li *ngFor=' let c of characters | filter: searchText'>
+{{ c }}
+</li>
+</ul>
+
+<div class="content">
+  <h1>Employee Management</h1>
+</div>
+
+</body>
+</html>
+
+<h1 appHlight >Hello</h1>
